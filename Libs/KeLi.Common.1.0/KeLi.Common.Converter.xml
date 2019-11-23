@@ -1,0 +1,257 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KeLi.Common.Converter</name>
+    </assembly>
+    <members>
+        <member name="T:KeLi.Common.Converter.Converter.ArrayConverter">
+            <summary>
+            A arrary converter.
+            </summary>
+        </member>
+        <member name="M:KeLi.Common.Converter.Converter.ArrayConverter.Convert(System.Object[0:,0:])">
+            <summary>
+            Coverts the two dimension array to the cross array.
+            </summary>
+            <param name="array"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Converter.Converter.ArrayConverter.Convert(System.Object[][])">
+            <summary>
+            Converts the cross array to the two dimension array.
+            </summary>
+            <param name="array"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KeLi.Common.Converter.Converter.EnumUtil">
+            <summary>
+            Enum Utility.
+            </summary>
+        </member>
+        <member name="M:KeLi.Common.Converter.Converter.EnumUtil.TryParseByDisplayAttr``1(System.String,``0@)">
+            <summary>
+            Trys parse the value to enum value by display attribute.
+            </summary>
+            <param name="value"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Converter.Converter.EnumUtil.TryParseByDescAttr``1(System.String,``0@)">
+            <summary>
+            Trys parse the value to enum value by description attribute.
+            </summary>
+            <param name="value"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Converter.Converter.EnumUtil.GetDisplayEnumDict``1">
+            <summary>
+            Gets a dictionary composed of display name and enum item value from enum type.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Converter.Converter.EnumUtil.GetDescriptionEnumDict``1">
+            <summary>
+            Gets a dictionary composed of description and enum item value from enum type.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KeLi.Common.Converter.Converter.CollectionConverter">
+            <summary>
+            A data conllection converter.
+            </summary>
+        </member>
+        <member name="M:KeLi.Common.Converter.Converter.CollectionConverter.ToList``1(System.Data.DataTable)">
+            <summary>
+            Converts the data table to the list.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Converter.Converter.CollectionConverter.ToList(System.Data.DataTable,System.Type)">
+            <summary>
+            Converts the data table to the ilist.
+            </summary>
+            <param name="dt"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Converter.Converter.CollectionConverter.ToList``1(System.Data.SqlClient.SqlDataReader)">
+            <summary>
+            Converts the sql data reader to the list.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="reader"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Converter.Converter.CollectionConverter.ToList(System.Data.SqlClient.SqlDataReader,System.Type)">
+            <summary>
+            Converts the sql data reader to the ilist.
+            </summary>
+            <param name="reader"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Converter.Converter.CollectionConverter.ToTable``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Converts the list to the data table.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="ts"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Converter.Converter.CollectionConverter.ToTable(System.Data.SqlClient.SqlDataReader)">
+            <summary>
+            Converts the sql data reader to the data table.
+            </summary>
+            <param name="reader"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Converter.Converter.CollectionConverter.ToAnyType``2(``0)">
+            <summary>
+            Converts the type t object to the type s object.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="S"></typeparam>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Converter.Converter.CollectionConverter.ToDbType(System.Object)">
+            <summary>
+            Convert the object to the sql db type object.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Converter.Converter.CollectionConverter.ToDictionary(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Converts the name value collection to the idictionary.
+            </summary>
+            <param name="pairs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Converter.Converter.CollectionConverter.ToLookup(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Converts the name value collection to the ilookup.
+            </summary>
+            <param name="pairs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Converter.Converter.CollectionConverter.ToNameValueCollection(System.Collections.Generic.IDictionary{System.String,System.String[]})">
+            <summary>
+            Converts the idictionary to the name value collection.
+            </summary>
+            <param name="pairs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Converter.Converter.CollectionConverter.ToNameValueCollection(System.Linq.ILookup{System.String,System.String[]})">
+            <summary>
+            Converts the ilookup to the name value collection.
+            </summary>
+            <param name="pairs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Converter.Converter.CollectionConverter.ToNvcString(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Converts the name value collection to the pair string.
+            </summary>
+            <param name="pairs"></param>
+        </member>
+        <member name="M:KeLi.Common.Converter.Converter.CollectionConverter.ToNvc(System.String)">
+            <summary>
+            Converts the pair string to the name value collection.
+            </summary>
+            <param name="pairs"></param>
+        </member>
+        <member name="T:KeLi.Common.Converter.Serialization.BinaryUtil">
+            <summary>
+            A binary data serialization.
+            </summary>
+        </member>
+        <member name="M:KeLi.Common.Converter.Serialization.BinaryUtil.Serialize(System.IO.FileInfo,System.Object)">
+            <summary>
+            Serializes the list.
+            </summary>
+            <param name="filePath"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:KeLi.Common.Converter.Serialization.BinaryUtil.Deserialize``1(System.IO.FileInfo)">
+            <summary>
+            Deserializes the file text to the list.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KeLi.Common.Converter.Serialization.JsonUtil">
+            <summary>
+            A json data serialization.
+            </summary>
+        </member>
+        <member name="M:KeLi.Common.Converter.Serialization.JsonUtil.Serialize(System.IO.FileInfo,System.Object)">
+            <summary>
+            Serializes the list.
+            </summary>
+            <param name="filePath"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:KeLi.Common.Converter.Serialization.JsonUtil.Deserialize``1(System.IO.FileInfo)">
+            <summary>
+            Deserializes the file text to the list.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KeLi.Common.Converter.Serialization.SoapUtil">
+            <summary>
+            A soap data serialization.
+            </summary>
+        </member>
+        <member name="M:KeLi.Common.Converter.Serialization.SoapUtil.Serialize``1(System.IO.FileInfo,System.Collections.Generic.List{``0})">
+            <summary>
+             Serializes the list.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="ts"></param>
+            <param name="filePath"></param>
+        </member>
+        <member name="M:KeLi.Common.Converter.Serialization.SoapUtil.Serialize``1(System.IO.FileInfo,``0[])">
+            <summary>
+             Serializes the list.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="ts"></param>
+            <param name="filePath"></param>
+        </member>
+        <member name="M:KeLi.Common.Converter.Serialization.SoapUtil.Deserialize``1(System.IO.FileInfo)">
+            <summary>
+            Deserializes the file text to the list.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KeLi.Common.Converter.Serialization.XmlUtil">
+            <summary>
+            A xml data serialization.
+            </summary>
+        </member>
+        <member name="M:KeLi.Common.Converter.Serialization.XmlUtil.Serialize(System.IO.FileInfo,System.Object)">
+            <summary>
+            Serializes the list.
+            </summary>
+            <param name="filePath"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:KeLi.Common.Converter.Serialization.XmlUtil.Deserialize``1(System.IO.FileInfo)">
+            <summary>
+            Deserializes the file text to the list.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

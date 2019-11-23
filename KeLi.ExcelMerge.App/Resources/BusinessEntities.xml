@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfBusinessEntity xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <BusinessEntity>
+    <MainBusinessType xsi:type="xsd:string">商业-集中式</MainBusinessType>
+    <ToltalAreaTotal xsi:type="xsd:double">1500</ToltalAreaTotal>
+    <ToltalAreaEarth xsi:type="xsd:double">1000</ToltalAreaEarth>
+    <ToltalAreaUnder xsi:type="xsd:double">500</ToltalAreaUnder>
+    <LeaseAreaTotal xsi:type="xsd:double">500</LeaseAreaTotal>
+    <LeaseAreaEarth xsi:type="xsd:double">300</LeaseAreaEarth>
+    <LeaseAreaUnder xsi:type="xsd:double">200</LeaseAreaUnder>
+    <ElevatorNumPassenger xsi:type="xsd:int">5</ElevatorNumPassenger>
+    <ElevatorNumFreight xsi:type="xsd:int">3</ElevatorNumFreight>
+    <RoomName xsi:type="xsd:string">主卧</RoomName>
+    <JrArea xsi:type="xsd:double">300</JrArea>
+    <JrFactor xsi:type="xsd:double">0.5</JrFactor>
+    <IsDecorate xsi:type="xsd:boolean">true</IsDecorate>
+    <WaterCondition xsi:type="xsd:string">有</WaterCondition>
+  </BusinessEntity>
+  <BusinessEntity>
+    <MainBusinessType xsi:type="xsd:string">商业-集中式</MainBusinessType>
+    <ToltalAreaTotal xsi:type="xsd:double">1100</ToltalAreaTotal>
+    <ToltalAreaEarth xsi:type="xsd:double">500</ToltalAreaEarth>
+    <ToltalAreaUnder xsi:type="xsd:double">600</ToltalAreaUnder>
+    <LeaseAreaTotal xsi:type="xsd:double">500</LeaseAreaTotal>
+    <LeaseAreaEarth xsi:type="xsd:double">300</LeaseAreaEarth>
+    <LeaseAreaUnder xsi:type="xsd:double">200</LeaseAreaUnder>
+    <ElevatorNumPassenger xsi:type="xsd:int">5</ElevatorNumPassenger>
+    <ElevatorNumFreight xsi:type="xsd:int">3</ElevatorNumFreight>
+    <RoomName xsi:type="xsd:string">主卧</RoomName>
+    <JrArea xsi:type="xsd:double">300</JrArea>
+    <JrFactor xsi:type="xsd:double">0.5</JrFactor>
+    <IsDecorate xsi:type="xsd:boolean">true</IsDecorate>
+    <WaterCondition xsi:type="xsd:string">有</WaterCondition>
+  </BusinessEntity>
+  <BusinessEntity>
+    <MainBusinessType xsi:type="xsd:string">商业-集中式</MainBusinessType>
+    <ToltalAreaTotal xsi:type="xsd:double">1500</ToltalAreaTotal>
+    <ToltalAreaEarth xsi:type="xsd:double">1000</ToltalAreaEarth>
+    <ToltalAreaUnder xsi:type="xsd:double">500</ToltalAreaUnder>
+    <LeaseAreaTotal xsi:type="xsd:double">500</LeaseAreaTotal>
+    <LeaseAreaEarth xsi:type="xsd:double">300</LeaseAreaEarth>
+    <LeaseAreaUnder xsi:type="xsd:double">200</LeaseAreaUnder>
+    <ElevatorNumPassenger xsi:type="xsd:int">5</ElevatorNumPassenger>
+    <ElevatorNumFreight xsi:type="xsd:int">3</ElevatorNumFreight>
+    <RoomName xsi:type="xsd:string">主卧</RoomName>
+    <JrArea xsi:type="xsd:double">300</JrArea>
+    <JrFactor xsi:type="xsd:double">0.5</JrFactor>
+    <IsDecorate xsi:type="xsd:boolean">true</IsDecorate>
+    <WaterCondition xsi:type="xsd:string">有</WaterCondition>
+  </BusinessEntity>
+  <BusinessEntity>
+    <MainBusinessType xsi:type="xsd:string">商业-集中式</MainBusinessType>
+    <ToltalAreaTotal xsi:type="xsd:double">1500</ToltalAreaTotal>
+    <ToltalAreaEarth xsi:type="xsd:double">1000</ToltalAreaEarth>
+    <ToltalAreaUnder xsi:type="xsd:double">500</ToltalAreaUnder>
+    <LeaseAreaTotal xsi:type="xsd:double">500</LeaseAreaTotal>
+    <LeaseAreaEarth xsi:type="xsd:double">300</LeaseAreaEarth>
+    <LeaseAreaUnder xsi:type="xsd:double">200</LeaseAreaUnder>
+    <ElevatorNumPassenger xsi:type="xsd:int">5</ElevatorNumPassenger>
+    <ElevatorNumFreight xsi:type="xsd:int">3</ElevatorNumFreight>
+    <RoomName xsi:type="xsd:string">主卧</RoomName>
+    <JrArea xsi:type="xsd:double">300</JrArea>
+    <JrFactor xsi:type="xsd:double">0.5</JrFactor>
+    <IsDecorate xsi:type="xsd:boolean">true</IsDecorate>
+    <WaterCondition xsi:type="xsd:string">有</WaterCondition>
+  </BusinessEntity>
+  <BusinessEntity>
+    <MainBusinessType xsi:type="xsd:string">商业-集中式</MainBusinessType>
+    <ToltalAreaTotal xsi:type="xsd:double">1300</ToltalAreaTotal>
+    <ToltalAreaEarth xsi:type="xsd:double">700</ToltalAreaEarth>
+    <ToltalAreaUnder xsi:type="xsd:double">600</ToltalAreaUnder>
+    <LeaseAreaTotal xsi:type="xsd:double">500</LeaseAreaTotal>
+    <LeaseAreaEarth xsi:type="xsd:double">300</LeaseAreaEarth>
+    <LeaseAreaUnder xsi:type="xsd:double">200</LeaseAreaUnder>
+    <ElevatorNumPassenger xsi:type="xsd:int">5</ElevatorNumPassenger>
+    <ElevatorNumFreight xsi:type="xsd:int">3</ElevatorNumFreight>
+    <RoomName xsi:type="xsd:string">主卧</RoomName>
+    <JrArea xsi:type="xsd:double">300</JrArea>
+    <JrFactor xsi:type="xsd:double">0.5</JrFactor>
+    <IsDecorate xsi:type="xsd:boolean">true</IsDecorate>
+    <WaterCondition xsi:type="xsd:string">有</WaterCondition>
+  </BusinessEntity>
+  <BusinessEntity>
+    <MainBusinessType xsi:type="xsd:string">商业-集中式</MainBusinessType>
+    <ToltalAreaTotal xsi:type="xsd:double">1500</ToltalAreaTotal>
+    <ToltalAreaEarth xsi:type="xsd:double">1000</ToltalAreaEarth>
+    <ToltalAreaUnder xsi:type="xsd:double">500</ToltalAreaUnder>
+    <LeaseAreaTotal xsi:type="xsd:double">500</LeaseAreaTotal>
+    <LeaseAreaEarth xsi:type="xsd:double">300</LeaseAreaEarth>
+    <LeaseAreaUnder xsi:type="xsd:double">200</LeaseAreaUnder>
+    <ElevatorNumPassenger xsi:type="xsd:int">5</ElevatorNumPassenger>
+    <ElevatorNumFreight xsi:type="xsd:int">3</ElevatorNumFreight>
+    <RoomName xsi:type="xsd:string">主卧</RoomName>
+    <JrArea xsi:type="xsd:double">300</JrArea>
+    <JrFactor xsi:type="xsd:double">0.5</JrFactor>
+    <IsDecorate xsi:type="xsd:boolean">true</IsDecorate>
+    <WaterCondition xsi:type="xsd:string">有</WaterCondition>
+  </BusinessEntity>
+  <BusinessEntity>
+    <MainBusinessType xsi:type="xsd:string">商业-集中式</MainBusinessType>
+    <ToltalAreaTotal xsi:type="xsd:double">1500</ToltalAreaTotal>
+    <ToltalAreaEarth xsi:type="xsd:double">1000</ToltalAreaEarth>
+    <ToltalAreaUnder xsi:type="xsd:double">500</ToltalAreaUnder>
+    <LeaseAreaTotal xsi:type="xsd:double">500</LeaseAreaTotal>
+    <LeaseAreaEarth xsi:type="xsd:double">300</LeaseAreaEarth>
+    <LeaseAreaUnder xsi:type="xsd:double">200</LeaseAreaUnder>
+    <ElevatorNumPassenger xsi:type="xsd:int">5</ElevatorNumPassenger>
+    <ElevatorNumFreight xsi:type="xsd:int">3</ElevatorNumFreight>
+    <RoomName xsi:type="xsd:string">主卧</RoomName>
+    <JrArea xsi:type="xsd:double">300</JrArea>
+    <JrFactor xsi:type="xsd:double">0.5</JrFactor>
+    <IsDecorate xsi:type="xsd:boolean">true</IsDecorate>
+    <WaterCondition xsi:type="xsd:string">有</WaterCondition>
+  </BusinessEntity>
+</ArrayOfBusinessEntity>

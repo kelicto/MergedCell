@@ -1,0 +1,510 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KeLi.Common.Tool</name>
+    </assembly>
+    <members>
+        <member name="T:KeLi.Common.Tool.Other.ExceptionUtil">
+            <summary>
+            Exception utility.
+            </summary>
+        </member>
+        <member name="M:KeLi.Common.Tool.Other.ExceptionUtil.AutoTry(System.Action,System.String,System.Boolean)">
+            <summary>
+            Auto try action.
+            </summary>
+            <param name="act"></param>
+            <param name="name"></param>
+            <param name="showMsg"></param>
+        </member>
+        <member name="T:KeLi.Common.Tool.Other.ConfigUtil">
+            <summary>
+            Config utility.
+            </summary>
+        </member>
+        <member name="M:KeLi.Common.Tool.Other.ConfigUtil.GetAssemblyType(System.String)">
+            <summary>
+            Gets the assembly information.
+            </summary>
+            <param name="className"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Tool.Other.ConfigUtil.GetClassType(System.String)">
+            <summary>
+            Gets the type declaration.
+            </summary>
+            <param name="className"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Tool.Other.ConfigUtil.GetAssemblyName(System.String)">
+            <summary>
+            Gets the assembly full string in the config file.
+            </summary>
+            <param name="className"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Tool.Other.ConfigUtil.GetClassName(System.String)">
+            <summary>
+            Gets the class full string in the config file.
+            </summary>
+            <param name="className"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KeLi.Common.Tool.Other.ImageUtil">
+            <summary>
+            Image utility.
+            </summary>
+        </member>
+        <member name="M:KeLi.Common.Tool.Other.ImageUtil.ToBitmapImage(System.Drawing.Bitmap)">
+            <summary>
+            Converts the bit map to the bitmap image.
+            </summary>
+            <param name="bitmap"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Tool.Other.ImageUtil.GetEmbeddedImage(System.String)">
+            <summary>
+            Gets the embeded image.
+            </summary>
+            <param name="resName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KeLi.Common.Tool.Other.LogAssist">
+            <summary>
+            A light log assist.
+            </summary>
+        </member>
+        <member name="F:KeLi.Common.Tool.Other.LogAssist.FOLDER_NAME">
+            <summary>
+            The log file name.
+            </summary>
+        </member>
+        <member name="F:KeLi.Common.Tool.Other.LogAssist.LOG_FILE_FORMAT">
+            <summary>
+            The file name format.
+            </summary>
+        </member>
+        <member name="F:KeLi.Common.Tool.Other.LogAssist.ITEM_TITLE">
+            <summary>
+            The log item time stamp.
+            </summary>
+        </member>
+        <member name="M:KeLi.Common.Tool.Other.LogAssist.WriteLog(System.Object)">
+            <summary>
+            Writes the log.
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:KeLi.Common.Tool.Other.RandomUtil">
+            <summary>
+            Random utilty.
+            </summary>
+        </member>
+        <member name="F:KeLi.Common.Tool.Other.RandomUtil.Rscp">
+            <summary>
+            The random number generator.
+            </summary>
+        </member>
+        <member name="F:KeLi.Common.Tool.Other.RandomUtil.Bytes">
+            <summary>
+            The random container.
+            </summary>
+        </member>
+        <member name="M:KeLi.Common.Tool.Other.RandomUtil.GenerateRandomNum">
+            <summary>
+            Generates a random number.
+            </summary>
+        </member>
+        <member name="M:KeLi.Common.Tool.Other.RandomUtil.GenerateRandomNum(System.Int32)">
+            <summary>
+            Generates a random nonnegative number.
+            </summary>
+            <param name="max"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Tool.Other.RandomUtil.GenerateRandomNum(System.Int32,System.Int32)">
+            <summary>
+            Generates a confused random nonnegative number.
+            </summary>
+            <param name="min"></param>
+            <param name="max"></param>
+        </member>
+        <member name="M:KeLi.Common.Tool.Other.RandomUtil.GenerateNumsByArraySort(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Generates a random number rely on array sort.
+            </summary>
+            <param name="num"></param>
+            <param name="min"></param>
+            <param name="max"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Tool.Other.RandomUtil.GenerateNumsByIndex(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Generates some numbers rely on index.
+            </summary>
+            <param name="num"></param>
+            <param name="min"></param>
+            <param name="max"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Tool.Other.RandomUtil.GenerateNumsByDetection(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Generates some numbers rely on detection.
+            </summary>
+            <param name="num"></param>
+            <param name="min"></param>
+            <param name="max"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Tool.Other.RandomUtil.GenerateNumsByArrayList(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Generates some numbers rely on array list.
+            </summary>
+            <param name="num"></param>
+            <param name="min"></param>
+            <param name="max"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Tool.Other.RandomUtil.GenerateNumsByHashtable(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Generates some numbers rely on hash table.
+            </summary>
+            <param name="num"></param>
+            <param name="min"></param>
+            <param name="max"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KeLi.Common.Tool.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:KeLi.Common.Tool.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:KeLi.Common.Tool.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:KeLi.Common.Tool.Security.AesEncrypt">
+            <summary>
+            AES encrypt.
+            </summary>
+        </member>
+        <member name="F:KeLi.Common.Tool.Security.AesEncrypt.Keys">
+            <summary>
+            The secret key.
+            </summary>
+        </member>
+        <member name="F:KeLi.Common.Tool.Security.AesEncrypt.Ivs">
+            <summary>
+            The vectors
+            </summary>
+        </member>
+        <member name="M:KeLi.Common.Tool.Security.AesEncrypt.Encrypt(System.String,System.Byte[],System.Byte[])">
+            <summary>
+            Encrypts the content.
+            </summary>
+            <param name="content"></param>
+            <param name="keys"></param>
+            <param name="ivs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Tool.Security.AesEncrypt.Decrypt(System.String,System.Byte[],System.Byte[])">
+            <summary>
+            Decrypts the ciphertext.
+            </summary>
+            <param name="ciphertext"></param>
+            <param name="keys"></param>
+            <param name="ivs"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KeLi.Common.Tool.Security.DesEncrypt">
+            <summary>
+            DES encrypt.
+            </summary>
+        </member>
+        <member name="M:KeLi.Common.Tool.Security.DesEncrypt.Encrypt(System.String,System.String)">
+            <summary>
+            Encrypts the content.
+            </summary>
+            <param name="content"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Tool.Security.DesEncrypt.Decrypt(System.String,System.String)">
+            <summary>
+            Decrypts the content.
+            </summary>
+            <param name="ciphertext"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Tool.Security.DesEncrypt.GenerateKey">
+            <summary>
+            Generates the secret key.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KeLi.Common.Tool.Security.Md5Encrypt">
+            <summary>
+            MD5 Encrypt.
+            </summary>
+        </member>
+        <member name="M:KeLi.Common.Tool.Security.Md5Encrypt.Encrypt(System.String)">
+            <summary>
+            Encrypt the content.
+            </summary>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KeLi.Common.Tool.Security.RsaEncrypt">
+            <summary>
+            RSA Encrypt.
+            </summary>
+        </member>
+        <member name="F:KeLi.Common.Tool.Security.RsaEncrypt.Pair">
+            <summary>
+            The key value pair.
+            </summary>
+        </member>
+        <member name="M:KeLi.Common.Tool.Security.RsaEncrypt.Encrypt(System.String,System.String)">
+            <summary>
+            Encrypts the content.
+            </summary>
+            <param name="content"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Tool.Security.RsaEncrypt.Decrypt(System.String,System.String)">
+            <summary>
+            Decrypts the ciphertext.
+            </summary>
+            <param name="ciphertext"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Tool.Security.RsaEncrypt.GetKeyPair">
+            <summary>
+            Gets key value pair set.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KeLi.Common.Tool.Web.HttpAssist">
+            <summary>
+            Http Assist.
+            </summary>
+        </member>
+        <member name="P:KeLi.Common.Tool.Web.HttpAssist.Cookies">
+            <summary>
+            The cookies.
+            </summary>
+        </member>
+        <member name="M:KeLi.Common.Tool.Web.HttpAssist.GetTypeRequest(KeLi.Common.Tool.Web.ResponseParam,System.String,System.String,System.String)">
+            <summary>
+            Gets all type request string data.
+            </summary>
+            <param name="param"></param>
+            <param name="url"></param>
+            <param name="filePath"></param>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Tool.Web.HttpAssist.GetTypeRequest``1(KeLi.Common.Tool.Web.ResponseParam,System.String,System.String,System.String)">
+            <summary>
+            Gets all type request model data.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="param"></param>
+            <param name="url"></param>
+            <param name="filePath"></param>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Tool.Web.HttpAssist.GetTypeRequest(KeLi.Common.Tool.Web.ResponseParam,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Gets all type request data.
+            </summary>
+            <param name="param"></param>
+            <param name="url"></param>
+            <param name="filePath"></param>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Tool.Web.HttpAssist.GetTypeRequest``1(KeLi.Common.Tool.Web.ResponseParam,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Gets all type request model data.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="param"></param>
+            <param name="url"></param>
+            <param name="filePath"></param>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Tool.Web.HttpAssist.DownloadFile(KeLi.Common.Tool.Web.ResponseParam,System.String,System.String)">
+            <summary>
+            Downloads the file.
+            </summary>
+            <param name="param"></param>
+            <param name="url"></param>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Tool.Web.HttpAssist.UploadFile(KeLi.Common.Tool.Web.ResponseParam,System.String,System.String)">
+            <summary>
+            Uploads the file.
+            </summary>
+            <param name="param"></param>
+            <param name="url"></param>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Tool.Web.HttpAssist.SetFileStream(System.String,System.Net.HttpWebRequest)">
+            <summary>
+            Sets the request's stream.
+            </summary>
+            <param name="filePath"></param>
+            <param name="request"></param>
+        </member>
+        <member name="M:KeLi.Common.Tool.Web.HttpAssist.CreateHttpResponse(KeLi.Common.Tool.Web.ResponseParam,System.String,System.String,System.String)">
+            <summary>
+            Creates http request data.
+            </summary>
+            <param name="param"></param>
+            <param name="url"></param>
+            <param name="filePath"></param>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Tool.Web.HttpAssist.CreateParameter(System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Creates the parameter.
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KeLi.Common.Tool.Web.HttpAssist.CheckResultValidation(System.Object,System.Security.Cryptography.X509Certificates.X509Certificate,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors)">
+            <summary>
+            Checks the result vaildation.
+            </summary>
+            <param name="sender"></param>
+            <param name="certificate"></param>
+            <param name="chain"></param>
+            <param name="errors"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KeLi.Common.Tool.Web.RequestType">
+            <summary>
+            Request type.
+            </summary>
+        </member>
+        <member name="F:KeLi.Common.Tool.Web.RequestType.Post">
+            <summary>
+            Post type.
+            </summary>
+        </member>
+        <member name="F:KeLi.Common.Tool.Web.RequestType.Delete">
+            <summary>
+            Delete type.
+            </summary>
+        </member>
+        <member name="F:KeLi.Common.Tool.Web.RequestType.Put">
+            <summary>
+            Put type.
+            </summary>
+        </member>
+        <member name="F:KeLi.Common.Tool.Web.RequestType.Patch">
+            <summary>
+            Patch type.
+            </summary>
+        </member>
+        <member name="F:KeLi.Common.Tool.Web.RequestType.Get">
+            <summary>
+            Get type.
+            </summary>
+        </member>
+        <member name="T:KeLi.Common.Tool.Web.ResponseParam">
+            <summary>
+            Response parameter.
+            </summary>
+        </member>
+        <member name="M:KeLi.Common.Tool.Web.ResponseParam.#ctor(KeLi.Common.Tool.Web.RequestType)">
+            <summary>
+            Response parameter.
+            </summary>
+            <param name="type"></param>
+        </member>
+        <member name="P:KeLi.Common.Tool.Web.ResponseParam.Type">
+            <summary>
+            Request type.
+            </summary>
+        </member>
+        <member name="P:KeLi.Common.Tool.Web.ResponseParam.Timeout">
+            <summary>
+            The timout.
+            </summary>
+        </member>
+        <member name="P:KeLi.Common.Tool.Web.ResponseParam.UserAgent">
+            <summary>
+            The user agent.
+            </summary>
+        </member>
+        <member name="P:KeLi.Common.Tool.Web.ResponseParam.ContentType">
+            <summary>
+            The content type.
+            </summary>
+        </member>
+        <member name="P:KeLi.Common.Tool.Web.ResponseParam.EncodeType">
+            <summary>
+            The encode type.
+            </summary>
+        </member>
+        <member name="P:KeLi.Common.Tool.Web.ResponseParam.Cookies">
+            <summary>
+            The cookies.
+            </summary>
+        </member>
+        <member name="P:KeLi.Common.Tool.Web.ResponseParam.Referer">
+            <summary>
+            The referer.
+            </summary>
+        </member>
+        <member name="P:KeLi.Common.Tool.Web.ResponseParam.Headers">
+            <summary>
+            The headers.
+            </summary>
+        </member>
+        <member name="P:KeLi.Common.Tool.Web.ResponseParam.Proxy">
+            <summary>
+            The proxy.
+            </summary>
+        </member>
+        <member name="P:KeLi.Common.Tool.Web.ResponseParam.Token">
+            <summary>
+            The token.
+            </summary>
+        </member>
+        <member name="P:KeLi.Common.Tool.Web.ResponseParam.TenantId">
+            <summary>
+            The tenant id.
+            </summary>
+        </member>
+        <member name="T:KeLi.Common.Tool.Web.SpiderUtil">
+            <summary>
+            Spider utility.
+            </summary>
+        </member>
+        <member name="M:KeLi.Common.Tool.Web.SpiderUtil.GetHtml(System.String)">
+            <summary>
+            Gets the html content.
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
