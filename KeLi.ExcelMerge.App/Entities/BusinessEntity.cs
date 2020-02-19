@@ -57,6 +57,20 @@ namespace KeLi.ExcelMerge.App.Entities
     {
         public BusinessEntity()
         {
+            MainBusinessType = default;
+            ToltalAreaTotal = default;
+            ToltalAreaEarth = default;
+            ToltalAreaUnder = default;
+            LeaseAreaTotal = default;
+            LeaseAreaEarth = default;
+            LeaseAreaUnder = default;
+            ElevatorNumPassenger = default;
+            ElevatorNumFreight = default;
+            RoomName = default;
+            JrArea = default;
+            JrFactor = default;
+            IsDecorate = default;
+            WaterCondition = default;
         }
 
         public BusinessEntity(params object[] strs)
