@@ -56,9 +56,9 @@ using KeLi.ExcelMerge.App.Utils;
 
 namespace KeLi.ExcelMerge.App.Forms
 {
-    public partial class MergeCellForm : Form
+    public partial class CellMergeForm : Form
     {
-        public MergeCellForm()
+        public CellMergeForm()
         {
             InitializeComponent();
             LoadDgv();
