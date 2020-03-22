@@ -2,7 +2,7 @@
 
 namespace KeLi.ExcelMerge.App.Forms
 {
-    partial class MergeCellForm
+    partial class CellMergeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,29 +30,30 @@ namespace KeLi.ExcelMerge.App.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MergeCellForm));
-            this.mdgvTest = new MergeDataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CellMergeForm));
+            this.mdgvTest = new KeLi.ExcelMerge.App.Components.MergeDataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.mdgvTest)).BeginInit();
             this.SuspendLayout();
             // 
             // mdgvTest
             // 
+            this.mdgvTest.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mdgvTest.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mdgvTest.Location = new System.Drawing.Point(0, 0);
             this.mdgvTest.MergeColumnNames = ((System.Collections.Generic.List<string>)(resources.GetObject("mdgvTest.MergeColumnNames")));
             this.mdgvTest.Name = "mdgvTest";
             this.mdgvTest.RowTemplate.Height = 23;
-            this.mdgvTest.Size = new System.Drawing.Size(1025, 448);
+            this.mdgvTest.Size = new System.Drawing.Size(1025, 485);
             this.mdgvTest.TabIndex = 0;
             // 
             // MergeCellForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 448);
+            this.ClientSize = new System.Drawing.Size(1025, 485);
             this.Controls.Add(this.mdgvTest);
             this.Name = "MergeCellForm";
-            this.Text = "测试可合并单元格控件";
+            this.Text = "Merge Cell Test";
             ((System.ComponentModel.ISupportInitialize)(this.mdgvTest)).EndInit();
             this.ResumeLayout(false);
 

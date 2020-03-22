@@ -84,11 +84,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Entities\AreaKpi.cs" />
-    <Compile Include="Forms\MergeCellForm.cs">
+    <Compile Include="Forms\CellMergeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MergeCellForm.Designer.cs">
-      <DependentUpon>MergeCellForm.cs</DependentUpon>
+    <Compile Include="Forms\CellMergeForm.Designer.cs">
+      <DependentUpon>CellMergeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Entities\BusinessEntity.cs" />
     <EmbeddedResource Include="Components\MergeDataGridView.resx">
@@ -99,8 +99,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MergeCellForm.resx">
-      <DependentUpon>MergeCellForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\CellMergeForm.resx">
+      <DependentUpon>CellMergeForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

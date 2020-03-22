@@ -47,6 +47,7 @@
 */
 
 using System.ComponentModel;
+
 using KeLi.Common.Drive.Excel;
 
 namespace KeLi.ExcelMerge.App.Entities
@@ -59,13 +60,21 @@ namespace KeLi.ExcelMerge.App.Entities
                 return;
 
             MainBusinessType = objs[0];
+
             ToltalArea = objs[1];
+
             LeaseArea = objs[2];
+
             ElevatorNum = objs[3];
+
             RoomName = objs[4];
+
             JrArea = objs[5];
+
             JrFactor = objs[6];
+
             IsDecorate = objs[7];
+
             WaterCondition = objs[8];
         }
 
