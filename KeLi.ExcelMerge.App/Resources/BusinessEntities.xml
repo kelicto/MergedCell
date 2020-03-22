@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ArrayOfBusinessEntity xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ArrayOfBusinessEntity xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <BusinessEntity>
     <MainBusinessType xsi:type="xsd:string">商业-集中式</MainBusinessType>
     <ToltalAreaTotal xsi:type="xsd:double">1500</ToltalAreaTotal>

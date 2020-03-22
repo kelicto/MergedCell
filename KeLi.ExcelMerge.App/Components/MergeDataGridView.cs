@@ -52,12 +52,18 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+
 using KeLi.ExcelMerge.App.Entities;
 
 namespace KeLi.ExcelMerge.App.Components
 {
     public partial class MergeDataGridView : DataGridView
     {
+        public MergeDataGridView()
+        {
+            InitializeComponent();
+        }
+
         [Browsable(false)]
         public List<string> MergeColumnNames { get; set; } = new List<string>();
 
@@ -69,22 +75,16 @@ namespace KeLi.ExcelMerge.App.Components
 
         private int SumWidth { get; set; }
 
-        public MergeDataGridView()
-        {
-            InitializeComponent();
-        }
-
         private void OnSizeChange(object sender, EventArgs e)
         {
-            var sumWidth = Columns.Cast<DataGridViewColumn>()
-                .Where(w => w.Visible)
-                .Select(s => s.Width).Sum();
+            var sumWidth = Columns.Cast<DataGridViewColumn>().Where(w => w.Visible).Select(s => s.Width).Sum();
 
             if (SumWidth == 0)
                 SumWidth = sumWidth;
 
             if (Width - sumWidth > 5 && IsLoaded)
                 AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
             else if (sumWidth < SumWidth && IsLoaded)
                 AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
         }
@@ -94,6 +94,7 @@ namespace KeLi.ExcelMerge.App.Components
             var rightIndex = colIndex + colCount - 1;
 
             SpanRows[colIndex] = new SpanInfo(headerText, colIndex, rightIndex);
+
             SpanRows[rightIndex] = new SpanInfo(headerText, colIndex, rightIndex);
 
             for (var i = colIndex + 1; i < rightIndex; i++)
@@ -109,6 +110,7 @@ namespace KeLi.ExcelMerge.App.Components
                     var cellInfo = new CellInfo
                     {
                         RowIndex = j,
+
                         ColumnIndex = i
                     };
 
@@ -143,14 +145,12 @@ namespace KeLi.ExcelMerge.App.Components
 
         public int GetUpRowNum(int rowIndex, int columnIndex)
         {
-            return CellInfos.Where(w => w.RowIndex == rowIndex && w.ColumnIndex <= columnIndex)
-                .Select(s => s.UpRowNum).Min();
+            return CellInfos.Where(w => w.RowIndex == rowIndex && w.ColumnIndex <= columnIndex).Select(s => s.UpRowNum).Min();
         }
 
         public int GetDownRowNum(int rowIndex, int columnIndex)
         {
-            return CellInfos.Where(w => w.RowIndex == rowIndex && w.ColumnIndex <= columnIndex)
-                .Select(s => s.DownRowNum).Min();
+            return CellInfos.Where(w => w.RowIndex == rowIndex && w.ColumnIndex <= columnIndex).Select(s => s.DownRowNum).Min();
         }
 
         protected override void OnCellPainting(DataGridViewCellPaintingEventArgs e)
@@ -162,6 +162,7 @@ namespace KeLi.ExcelMerge.App.Components
             if (e.ColumnIndex < 0)
             {
                 base.OnCellPainting(e);
+
                 return;
             }
 
@@ -184,7 +185,9 @@ namespace KeLi.ExcelMerge.App.Components
             var gridPen = new Pen(GridColor);
 
             var virtualWidth = GetVirtualWidth(span);
+
             var image = new Bitmap(virtualWidth, e.CellBounds.Bottom - e.CellBounds.Top);
+
             var gs = Graphics.FromImage(image);
 
             gs.Clear(ColumnHeadersDefaultCellStyle.BackColor);
@@ -211,6 +214,7 @@ namespace KeLi.ExcelMerge.App.Components
                 var topRect = new Rectangle(-1, 0, image.Width, image.Height / 2);
 
                 TextRenderer.DrawText(gs, span.HeaderText, Font, topRect, ColumnHeadersDefaultCellStyle.ForeColor);
+
                 gs.DrawRectangle(gridPen, topRect);
 
                 var imageDx = -1;
@@ -218,10 +222,13 @@ namespace KeLi.ExcelMerge.App.Components
                 for (var i = span.LeftIndex; i <= span.RightIndex; i++)
                 {
                     var bottomWidth = Columns[i].Width;
+
                     var bottomRect = new Rectangle(imageDx, image.Height / 2, bottomWidth, image.Height / 2);
 
                     gs.DrawRectangle(gridPen, bottomRect);
+
                     TextRenderer.DrawText(gs, Columns[i].HeaderText, Font, bottomRect, ColumnHeadersDefaultCellStyle.ForeColor);
+
                     imageDx += bottomWidth;
                 }
             }
@@ -240,9 +247,13 @@ namespace KeLi.ExcelMerge.App.Components
                 return;
 
             var rect = e.CellBounds;
+
             var g = e.Graphics;
+
             var upRowNum = GetUpRowNum(e.RowIndex, e.ColumnIndex);
+
             var downRowNum = GetDownRowNum(e.RowIndex, e.ColumnIndex);
+
             var tag = Columns[e.ColumnIndex].Tag.ToString();
 
             if (!string.IsNullOrEmpty(tag))
@@ -250,6 +261,7 @@ namespace KeLi.ExcelMerge.App.Components
                 var index = Columns[tag]?.Index;
 
                 upRowNum = GetUpRowNum(e.RowIndex, index ?? 0);
+
                 downRowNum = GetDownRowNum(e.RowIndex, index ?? 0);
             }
 
@@ -276,57 +288,77 @@ namespace KeLi.ExcelMerge.App.Components
         private static void DrawString(DataGridViewCellPaintingEventArgs e, int upRowNum, int downRowNum)
         {
             var font = e.CellStyle.Font;
+
             var gs = e.Graphics;
+
             var brush = new SolidBrush(e.CellStyle.ForeColor);
+
             var fontH = (int)gs.MeasureString(e.Value?.ToString(), font).Height;
+
             var fontW = (int)gs.MeasureString(e.Value?.ToString(), font).Width;
+
             var rectX = e.CellBounds.X;
+
             var rectY = e.CellBounds.Y;
+
             var rectH = e.CellBounds.Height;
+
             var rectW = e.CellBounds.Width - fontW;
+
             var val = e.Value?.ToString();
+
             var count = upRowNum + downRowNum - 1;
 
             switch (e.CellStyle.Alignment)
             {
                 case DataGridViewContentAlignment.BottomCenter:
                     gs.DrawString(val, font, brush, rectX + rectW / 2, rectY + rectH * downRowNum - fontH);
+
                     break;
 
                 case DataGridViewContentAlignment.BottomLeft:
                     gs.DrawString(val, font, brush, rectX, rectY + rectH * downRowNum - fontH);
+
                     break;
 
                 case DataGridViewContentAlignment.BottomRight:
                     gs.DrawString(val, font, brush, rectX + rectW, rectY + rectH * downRowNum - fontH);
+
                     break;
 
                 case DataGridViewContentAlignment.MiddleCenter:
                     gs.DrawString(val, font, brush, rectX + rectW / 2, rectY - rectH * (upRowNum - 1) + (rectH * count - fontH) / 2);
+
                     break;
 
                 case DataGridViewContentAlignment.MiddleLeft:
                     gs.DrawString(val, font, brush, rectX, rectY - rectH * (upRowNum - 1) + (rectH * count - fontH) / 2);
+
                     break;
 
                 case DataGridViewContentAlignment.MiddleRight:
                     gs.DrawString(val, font, brush, rectX + rectW, rectY - rectH * (upRowNum - 1) + (rectH * count - fontH) / 2);
+
                     break;
 
                 case DataGridViewContentAlignment.TopCenter:
                     gs.DrawString(val, font, brush, rectX + rectW / 2, rectY - rectH * (upRowNum - 1));
+
                     break;
 
                 case DataGridViewContentAlignment.TopLeft:
                     gs.DrawString(val, font, brush, rectX, rectY - rectH * (upRowNum - 1));
+
                     break;
 
                 case DataGridViewContentAlignment.TopRight:
                     gs.DrawString(val, font, brush, rectX + rectW, rectY - rectH * (upRowNum - 1));
+
                     break;
 
                 default:
                     gs.DrawString(val, font, brush, rectX + rectW / 2, rectY - rectH * (upRowNum - 1) + (rectH * count - fontH) / 2);
+
                     break;
             }
         }

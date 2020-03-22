@@ -51,8 +51,10 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+
 using KeLi.Common.Drive.Excel;
 using KeLi.ExcelMerge.App.Components;
+
 using OfficeOpenXml;
 
 namespace KeLi.ExcelMerge.App.Utils
@@ -73,12 +75,17 @@ namespace KeLi.ExcelMerge.App.Utils
                 for (var i = 0; i < typeof(T).GetProperties().Length; i++)
                 {
                     var p = typeof(T).GetProperties()[i];
+
                     var pDcrp = p.GetDcrp();
+
                     var column = new DataGridViewTextBoxColumn
                     {
                         Name = p.Name,
+
                         DataPropertyName = p.Name,
+
                         HeaderText = pDcrp,
+
                         FillWeight = GetColumnWeight(pDcrp)
                     };
 
@@ -87,6 +94,7 @@ namespace KeLi.ExcelMerge.App.Utils
             }
 
             dgv.DataSource = objs;
+
             dgv.SetDgvStyle();
         }
 
@@ -109,23 +117,32 @@ namespace KeLi.ExcelMerge.App.Utils
                 foreach (var p in ps)
                 {
                     var pDcrp = p.GetDcrp();
+
                     var column = new DataGridViewTextBoxColumn
                     {
                         Name = p.Name,
+
                         Tag = p.GetReference(),
+
                         DataPropertyName = p.Name,
+
                         HeaderText = pDcrp,
+
                         FillWeight = GetColumnWeight(pDcrp)
                     };
 
                     mdgv.Columns.Add(column);
+
                     mdgv.MergeColumnNames.Add(p.Name);
                 }
             }
 
             mdgv.DataSource = objs;
+
             mdgv.SetMdgvStyle();
+
             MergeHeaders<Title>(mdgv);
+
             mdgv.SetCellInfos();
         }
 
@@ -153,7 +170,9 @@ namespace KeLi.ExcelMerge.App.Utils
 
                     // If dgv cell value is null, sheet cell should value.
                     var val = dgv.Rows[i].Cells[column.Name].Value;
+
                     var tag = dgv.Rows[i].Cells[column.Name].Tag;
+
                     var isNull = string.IsNullOrWhiteSpace(val?.ToString());
 
                     sheet.Cells[i + param.RowIndex + 1, j + param.ColumnIndex].Value = isNull ? tag : val;
@@ -172,18 +191,22 @@ namespace KeLi.ExcelMerge.App.Utils
                 File.Copy(param.TemplatePath.FullName, param.FilePath.FullName);
 
             var excel = param.GetExcelPackage(out var sheet);
+
             var columns = mdgv.Columns.Cast<DataGridViewColumn>().Where(w => w.Visible).ToList();
 
             if (createHeader)
             {
                 var lastSum = param.ColumnIndex;
+
                 var ps = typeof(Title).GetProperties();
 
                 // Merges first title and sets first title value.
                 foreach (var p in ps)
                 {
                     var spanNum = p.GetSpan();
+
                     var columnDcrp = p.GetDcrp();
+
                     var range = sheet.Cells[param.RowIndex, lastSum, param.RowIndex, lastSum + spanNum - 1];
 
                     range.Value = columnDcrp;
@@ -222,8 +245,10 @@ namespace KeLi.ExcelMerge.App.Utils
 
             // Sets content cell value.
             for (var i = 0; i < mdgv.RowCount; i++)
+            {
                 for (var j = 0; j < columns.Count; j++)
                     sheet.Cells[i + param.RowIndex + 2, j + param.ColumnIndex].Value = mdgv.Rows[i].Cells[columns[j].Name].Value;
+            }
 
             if (createHeader)
             {
@@ -233,8 +258,11 @@ namespace KeLi.ExcelMerge.App.Utils
                     for (var j = 0; j < mdgv.RowCount; j++)
                     {
                         var upRowNum = mdgv.GetUpRowNum(j, i) - 1;
+
                         var downRowNum = mdgv.GetDownRowNum(j, i) - 1;
+
                         var cell = sheet.Cells[j + param.RowIndex, i + param.ColumnIndex];
+
                         var tag = mdgv.Columns[i].Tag?.ToString();
 
                         if (!string.IsNullOrEmpty(tag))
@@ -242,6 +270,7 @@ namespace KeLi.ExcelMerge.App.Utils
                             var tempIndex = mdgv.Columns[tag]?.Index;
 
                             upRowNum = mdgv.GetUpRowNum(j, tempIndex ?? 0) - 1;
+
                             downRowNum = mdgv.GetDownRowNum(j, tempIndex ?? 0) - 1;
                         }
 
@@ -257,6 +286,7 @@ namespace KeLi.ExcelMerge.App.Utils
             }
 
             sheet.SetExcelStyle();
+
             excel.Save();
 
             return excel;
@@ -265,11 +295,17 @@ namespace KeLi.ExcelMerge.App.Utils
         public static void SetDgvStyle(this DataGridView dgv)
         {
             dgv.BackgroundColor = Color.White;
+
             dgv.BorderStyle = BorderStyle.None;
+
             dgv.AllowUserToAddRows = false;
+
             dgv.AllowUserToDeleteRows = false;
+
             dgv.AllowUserToResizeRows = false;
+
             dgv.AllowUserToResizeColumns = false;
+
             dgv.RowHeadersVisible = false;
 
             // Sets two title height
@@ -296,7 +332,9 @@ namespace KeLi.ExcelMerge.App.Utils
         public static void SetMdgvStyle(this MergeDataGridView mdgv)
         {
             mdgv.SetDgvStyle();
+
             mdgv.DefaultCellStyle.SelectionBackColor = mdgv.DefaultCellStyle.BackColor;
+
             mdgv.DefaultCellStyle.SelectionForeColor = mdgv.DefaultCellStyle.ForeColor;
         }
 
@@ -307,9 +345,11 @@ namespace KeLi.ExcelMerge.App.Utils
             for (var i = 0; i < typeof(T).GetProperties().Length; i++)
             {
                 var p = typeof(T).GetProperties()[i];
+
                 var spanNum = p.GetSpan();
 
                 mdgv.AddSpanHeader(p.GetDcrp(), lastSum, spanNum);
+
                 lastSum += spanNum;
             }
         }
@@ -317,7 +357,9 @@ namespace KeLi.ExcelMerge.App.Utils
         private static int GetColumnWeight(string description)
         {
             var f1 = string.IsNullOrEmpty(description) || description.Length > 10;
+
             var f2 = description.Length > 6;
+
             var f3 = description.Length < 4;
 
             return f1 ? 7 : f2 ? 4 : f3 ? 3 : description.Length;
@@ -326,7 +368,9 @@ namespace KeLi.ExcelMerge.App.Utils
         private static int GetSheetWidth(string description)
         {
             var f1 = string.IsNullOrEmpty(description) || description.Length > 10;
+
             var f2 = description.Length > 6;
+
             var f3 = description.Length < 4;
 
             return f1 ? 15 : f2 ? 20 : f3 ? 8 : 10;

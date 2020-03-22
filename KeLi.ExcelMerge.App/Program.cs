@@ -48,6 +48,7 @@
 
 using System;
 using System.Windows.Forms;
+
 using KeLi.ExcelMerge.App.Forms;
 
 namespace KeLi.ExcelMerge.App
@@ -58,8 +59,11 @@ namespace KeLi.ExcelMerge.App
         public static void Main()
         {
             Application.EnableVisualStyles();
+
             Application.SetCompatibleTextRenderingDefault(false);
+
             Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
+
             Application.Run(new CellMergeForm());
         }
     }
