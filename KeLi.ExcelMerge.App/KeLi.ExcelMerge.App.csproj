@@ -15,7 +15,7 @@
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -28,7 +28,7 @@
     </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,12 +42,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\KeLi.Libs\EPPlus.4.1\EPPlus.dll</HintPath>
     </Reference>
-    <Reference Include="KeLi.Common.Converter, Version=1.0.7266.32132, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\KeLi.Libs\KeLi.Common.1.0\KeLi.Common.Converter.dll</HintPath>
+    <Reference Include="KeLi.Power.Drive">
+      <HintPath>..\..\KeLi.Libs\KeLi.Power.1.0\KeLi.Power.Drive.dll</HintPath>
     </Reference>
-    <Reference Include="KeLi.Common.Drive">
-      <HintPath>..\..\KeLi.Libs\KeLi.Common.1.0\KeLi.Common.Drive.dll</HintPath>
+    <Reference Include="KeLi.Power.Tool">
+      <HintPath>..\..\KeLi.Libs\KeLi.Power.1.0\KeLi.Power.Tool.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -74,24 +73,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Utils\ExcelColumnUtil.cs" />
-    <Compile Include="Utils\DgvExcelUtil.cs" />
-    <Compile Include="Components\MergeDataGridView.cs">
+    <Compile Include="DataGridViewExtension.cs" />
+    <Compile Include="MergeDataGridView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Components\MergeDataGridView.designer.cs">
+    <Compile Include="MergeDataGridView.designer.cs">
       <DependentUpon>MergeDataGridView.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Entities\AreaKpi.cs" />
-    <Compile Include="Forms\CellMergeForm.cs">
+    <Compile Include="MergeCellFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CellMergeForm.Designer.cs">
-      <DependentUpon>CellMergeForm.cs</DependentUpon>
+    <Compile Include="MergeCellFrm.Designer.cs">
+      <DependentUpon>MergeCellFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Entities\BusinessEntity.cs" />
-    <EmbeddedResource Include="Components\MergeDataGridView.resx">
+    <EmbeddedResource Include="MergeDataGridView.resx">
       <DependentUpon>MergeDataGridView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -99,8 +97,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CellMergeForm.resx">
-      <DependentUpon>CellMergeForm.cs</DependentUpon>
+    <EmbeddedResource Include="MergeCellFrm.resx">
+      <DependentUpon>MergeCellFrm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -111,27 +109,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Content Include="Resources\Template.xlsx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\BaseColumns.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\BaseItems.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\CustomColumns.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\CustomItems.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\BusinessEntities.xml">
+    <Content Include="Resources\BusinessData.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

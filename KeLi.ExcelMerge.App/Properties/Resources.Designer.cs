@@ -62,81 +62,18 @@ namespace KeLi.ExcelMerge.App.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-        ///&lt;ArrayOfBusinessEntity xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
+        ///&lt;ArrayOfBusinessEntity xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;
+        ///                       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
         ///  &lt;BusinessEntity&gt;
         ///    &lt;MainBusinessType xsi:type=&quot;xsd:string&quot;&gt;商业-集中式&lt;/MainBusinessType&gt;
         ///    &lt;ToltalAreaTotal xsi:type=&quot;xsd:double&quot;&gt;1500&lt;/ToltalAreaTotal&gt;
         ///    &lt;ToltalAreaEarth xsi:type=&quot;xsd:double&quot;&gt;1000&lt;/ToltalAreaEarth&gt;
         ///    &lt;ToltalAreaUnder xsi:type=&quot;xsd:double&quot;&gt;500&lt;/ToltalAreaUnder&gt;
-        ///    &lt;LeaseAreaTotal xsi:type=&quot;xsd:double&quot;&gt;500&lt;/LeaseAreaT [rest of string was truncated]&quot;;.
+        ///    &lt;LeaseAreaTotal xsi:type=&quot;xsd [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string BusinessEntities {
+        internal static string BusinessData {
             get {
-                return ResourceManager.GetString("BusinessEntities", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Resources\Template.xlsx.
-        /// </summary>
-        internal static string Excel_DefaultTemplate {
-            get {
-                return ResourceManager.GetString("Excel_DefaultTemplate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Resources\BaseColumns.json.
-        /// </summary>
-        internal static string Json_BaseColumns {
-            get {
-                return ResourceManager.GetString("Json_BaseColumns", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Resources\BaseItems.json.
-        /// </summary>
-        internal static string Json_BaseItems {
-            get {
-                return ResourceManager.GetString("Json_BaseItems", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Resources\CustomColumns.json.
-        /// </summary>
-        internal static string Json_CustomColumns {
-            get {
-                return ResourceManager.GetString("Json_CustomColumns", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Resources\CustomItems.json.
-        /// </summary>
-        internal static string Json_CustomItems {
-            get {
-                return ResourceManager.GetString("Json_CustomItems", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] Template {
-            get {
-                object obj = ResourceManager.GetObject("Template", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Resources\BusinessEntities.xml.
-        /// </summary>
-        internal static string Xml_BusinessEntities {
-            get {
-                return ResourceManager.GetString("Xml_BusinessEntities", resourceCulture);
+                return ResourceManager.GetString("BusinessData", resourceCulture);
             }
         }
     }

@@ -55,7 +55,7 @@ using System.Windows.Forms;
 
 using KeLi.ExcelMerge.App.Entities;
 
-namespace KeLi.ExcelMerge.App.Components
+namespace KeLi.ExcelMerge.App
 {
     public partial class MergeDataGridView : DataGridView
     {

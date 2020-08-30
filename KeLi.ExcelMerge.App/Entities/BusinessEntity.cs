@@ -49,7 +49,7 @@
 using System;
 using System.ComponentModel;
 
-using KeLi.Common.Drive.Excel;
+using KeLi.Power.Drive.Excel;
 
 namespace KeLi.ExcelMerge.App.Entities
 {
@@ -59,31 +59,18 @@ namespace KeLi.ExcelMerge.App.Entities
         public BusinessEntity()
         {
             MainBusinessType = default;
-
             ToltalAreaTotal = default;
-
             ToltalAreaEarth = default;
-
             ToltalAreaUnder = default;
-
             LeaseAreaTotal = default;
-
             LeaseAreaEarth = default;
-
             LeaseAreaUnder = default;
-
             ElevatorNumPassenger = default;
-
             ElevatorNumFreight = default;
-
             RoomName = default;
-
             JrArea = default;
-
             JrFactor = default;
-
             IsDecorate = default;
-
             WaterCondition = default;
         }
 
@@ -93,31 +80,18 @@ namespace KeLi.ExcelMerge.App.Entities
                 return;
 
             MainBusinessType = strs[0].ToString();
-
             ToltalAreaTotal = Convert.ToDouble(strs[1]);
-
             ToltalAreaEarth = Convert.ToDouble(strs[2]);
-
             ToltalAreaUnder = Convert.ToDouble(strs[3]);
-
             LeaseAreaTotal = Convert.ToDouble(strs[4]);
-
             LeaseAreaEarth = Convert.ToDouble(strs[5]);
-
             LeaseAreaUnder = Convert.ToDouble(strs[6]);
-
             ElevatorNumPassenger = Convert.ToInt32(strs[7]);
-
             ElevatorNumFreight = Convert.ToInt32(strs[8]);
-
             RoomName = strs[9].ToString();
-
             JrArea = Convert.ToDouble(strs[10]);
-
             JrFactor = Convert.ToDouble(strs[11]);
-
             IsDecorate = Convert.ToBoolean(strs[12]);
-
             WaterCondition = strs[13].ToString();
         }
 

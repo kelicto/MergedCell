@@ -118,28 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Template" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Template.xlsx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Excel_DefaultTemplate" xml:space="preserve">
-    <value>Resources\Template.xlsx</value>
-  </data>
-  <data name="Xml_BusinessEntities" xml:space="preserve">
-    <value>Resources\BusinessEntities.xml</value>
-  </data>
-  <data name="BusinessEntities" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BusinessEntities.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="Json_BaseColumns" xml:space="preserve">
-      <value>Resources\BaseColumns.json</value>
-  </data>
-  <data name="Json_BaseItems" xml:space="preserve">
-      <value>Resources\BaseItems.json</value>
-  </data>
-  <data name="Json_CustomColumns" xml:space="preserve">
-      <value>Resources\CustomColumns.json</value>
-  </data>
-  <data name="Json_CustomItems" xml:space="preserve">
-      <value>Resources\CustomItems.json</value>
+  <data name="BusinessData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BusinessData.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

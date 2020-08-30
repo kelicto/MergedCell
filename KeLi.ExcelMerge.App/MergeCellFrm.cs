@@ -50,28 +50,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
-using KeLi.Common.Converter.Serialization;
 using KeLi.ExcelMerge.App.Entities;
-using KeLi.ExcelMerge.App.Properties;
-using KeLi.ExcelMerge.App.Utils;
+using KeLi.Power.Tool.Serializations;
 
-namespace KeLi.ExcelMerge.App.Forms
+namespace KeLi.ExcelMerge.App
 {
-    public partial class CellMergeForm : Form
+    public partial class MergeCellFrm : Form
     {
-        public CellMergeForm()
+        public MergeCellFrm()
         {
             InitializeComponent();
 
-            LoadDgv();
-
-            ExcelColumnUtil.ToExcel("A1");
-        }
-
-        public void LoadDgv()
-        {
-            var businessfile = new FileInfo(Resources.Xml_BusinessEntities);
-
+            var businessfile = new FileInfo(@"Resources\BusinessData.xml");
             var data = XmlUtil.Deserialize<List<BusinessEntity>>(businessfile);
 
             mdgvTest.ToMergeDgv<BusinessCategory, BusinessEntity>(data);

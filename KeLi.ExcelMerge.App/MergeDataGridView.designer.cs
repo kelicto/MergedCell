@@ -1,5 +1,5 @@
 ﻿
-namespace KeLi.ExcelMerge.App.Components
+namespace KeLi.ExcelMerge.App
 {
     partial class MergeDataGridView
     {

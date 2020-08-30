@@ -52,16 +52,15 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
-using KeLi.Common.Drive.Excel;
-using KeLi.ExcelMerge.App.Components;
+using KeLi.Power.Drive.Excel;
 
 using OfficeOpenXml;
 
-namespace KeLi.ExcelMerge.App.Utils
+namespace KeLi.ExcelMerge.App
 {
-    public static class DgvExcelUtil
+    public static class DataGridViewExtension
     {
-        public static void ToDgv<T>(this DataGridView dgv, ExcelParam param)
+        public static void ToDgv<T>(this DataGridView dgv, ExcelParameter param)
         {
             var data = param.AsList<T>();
 
@@ -98,21 +97,21 @@ namespace KeLi.ExcelMerge.App.Utils
             dgv.SetDgvStyle();
         }
 
-        public static void ToMergeDgv<Title, Model>(this MergeDataGridView mdgv, ExcelParam param)
+        public static void ToMergeDgv<TTitle, TModel>(this MergeDataGridView mdgv, ExcelParameter param)
         {
-            var data = param.AsList<Model>();
+            var data = param.AsList<TModel>();
 
-            mdgv.ToMergeDgv<Title, Model>(data);
+            mdgv.ToMergeDgv<TTitle, TModel>(data);
         }
 
-        public static void ToMergeDgv<Title, Model>(this MergeDataGridView mdgv, List<Model> objs)
+        public static void ToMergeDgv<TTitle, TModel>(this MergeDataGridView mdgv, List<TModel> objs)
         {
             if (mdgv.MergeColumnNames == null)
                 mdgv.MergeColumnNames = new List<string>();
 
             if (mdgv.ColumnCount == 0)
             {
-                var ps = typeof(Model).GetProperties();
+                var ps = typeof(TModel).GetProperties();
 
                 foreach (var p in ps)
                 {
@@ -141,15 +140,15 @@ namespace KeLi.ExcelMerge.App.Utils
 
             mdgv.SetMdgvStyle();
 
-            MergeHeaders<Title>(mdgv);
+            MergeHeaders<TTitle>(mdgv);
 
             mdgv.SetCellInfos();
         }
 
-        public static ExcelPackage ToExcel(this DataGridView dgv, ExcelParam param, bool createHeader = true)
+        public static ExcelPackage ToExcel(this DataGridView dgv, ExcelParameter param, bool createHeader = true)
         {
-            if (!param.FilePath.Exists)
-                File.Copy(param.TemplatePath.FullName, param.FilePath.FullName);
+            if (!File.Exists(param.FilePath))
+                File.Copy(param.TemplatePath, param.FilePath);
 
             var excel = param.GetExcelPackage(out var sheet);
             var columns = dgv.Columns.Cast<DataGridViewColumn>().Where(w => w.Visible).ToList();
@@ -185,10 +184,10 @@ namespace KeLi.ExcelMerge.App.Utils
             return excel;
         }
 
-        public static ExcelPackage ToExcel<Title>(this MergeDataGridView mdgv, ExcelParam param, bool createHeader = true)
+        public static ExcelPackage ToExcel<TTitle>(this MergeDataGridView mdgv, ExcelParameter param, bool createHeader = true)
         {
-            if (!param.FilePath.Exists)
-                File.Copy(param.TemplatePath.FullName, param.FilePath.FullName);
+            if (!File.Exists(param.FilePath))
+                File.Copy(param.TemplatePath, param.FilePath);
 
             var excel = param.GetExcelPackage(out var sheet);
 
@@ -198,7 +197,7 @@ namespace KeLi.ExcelMerge.App.Utils
             {
                 var lastSum = param.ColumnIndex;
 
-                var ps = typeof(Title).GetProperties();
+                var ps = typeof(TTitle).GetProperties();
 
                 // Merges first title and sets first title value.
                 foreach (var p in ps)

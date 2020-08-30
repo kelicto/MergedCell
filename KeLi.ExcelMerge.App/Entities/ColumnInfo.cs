@@ -53,11 +53,8 @@ namespace KeLi.ExcelMerge.App.Entities
         public ColumnInfo(string[] baseClumns, string[] baseItems, string[] customColumns, string[][] customItems)
         {
             BaseClumns = baseClumns;
-
             BaseItems = baseItems;
-
             CustomColumns = customColumns;
-
             CustomItems = customItems;
         }
 

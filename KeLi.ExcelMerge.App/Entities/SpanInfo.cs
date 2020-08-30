@@ -53,9 +53,7 @@ namespace KeLi.ExcelMerge.App.Entities
         public SpanInfo(string headerText, int leftIndex, int rightIndex)
         {
             HeaderText = headerText;
-
             LeftIndex = leftIndex;
-
             RightIndex = rightIndex;
         }
 
