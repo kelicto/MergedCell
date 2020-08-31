@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
-
 using KeLi.MergedCell.App.Entities;
 using KeLi.Power.Tool.Serializations;
 
