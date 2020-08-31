@@ -46,55 +46,96 @@
         /_==__==========__==_ooo__ooo=_/'   /___________,"
 */
 
+using System;
 using System.ComponentModel;
 
-namespace KeLi.ExcelMerge.App.Entities
+using KeLi.Power.Drive.Excel;
+
+namespace KeLi.MergedCell.App.Entities
 {
-    public class AreaKpi
+    [Serializable]
+    public class BusinessEntity
     {
-        [Description("楼栋号")]
-        public string BuildingNo { get; set; }
+        public BusinessEntity()
+        {
+            MainBusinessType = default;
+            ToltalAreaTotal = default;
+            ToltalAreaEarth = default;
+            ToltalAreaUnder = default;
+            LeaseAreaTotal = default;
+            LeaseAreaEarth = default;
+            LeaseAreaUnder = default;
+            ElevatorNumPassenger = default;
+            ElevatorNumFreight = default;
+            RoomName = default;
+            JrArea = default;
+            JrFactor = default;
+            IsDecorate = default;
+            WaterCondition = default;
+        }
 
-        [Description("楼层")]
-        public string Floor { get; set; }
+        public BusinessEntity(params object[] strs)
+        {
+            if (strs.Length < 14)
+                return;
 
-        [Description("铺")]
-        public string ShopName { get; set; }
+            MainBusinessType = strs[0].ToString();
+            ToltalAreaTotal = Convert.ToDouble(strs[1]);
+            ToltalAreaEarth = Convert.ToDouble(strs[2]);
+            ToltalAreaUnder = Convert.ToDouble(strs[3]);
+            LeaseAreaTotal = Convert.ToDouble(strs[4]);
+            LeaseAreaEarth = Convert.ToDouble(strs[5]);
+            LeaseAreaUnder = Convert.ToDouble(strs[6]);
+            ElevatorNumPassenger = Convert.ToInt32(strs[7]);
+            ElevatorNumFreight = Convert.ToInt32(strs[8]);
+            RoomName = strs[9].ToString();
+            JrArea = Convert.ToDouble(strs[10]);
+            JrFactor = Convert.ToDouble(strs[11]);
+            IsDecorate = Convert.ToBoolean(strs[12]);
+            WaterCondition = strs[13].ToString();
+        }
+
+        [Description("主数据建筑业态")]
+        public object MainBusinessType { get; set; }
+
+        [Description("总面积")]
+        public object ToltalAreaTotal { get; set; }
+
+        [Description("地上")]
+        public object ToltalAreaEarth { get; set; }
+
+        [Description("地下")]
+        public object ToltalAreaUnder { get; set; }
+
+        [Description("总面积")]
+        public object LeaseAreaTotal { get; set; }
+
+        [Description("地上")]
+        public object LeaseAreaEarth { get; set; }
+
+        [Description("地下")]
+        public object LeaseAreaUnder { get; set; }
+
+        [Description("客梯")]
+        [Reference("MainBusinessType")]
+        public object ElevatorNumPassenger { get; set; }
+
+        [Description("货梯")]
+        public object ElevatorNumFreight { get; set; }
 
         [Description("房间名称")]
-        public string RoomName { get; set; }
-
-        [Description("龙湖建筑面积(㎡)")]
-        public string LongforBuildingArea { get; set; }
+        public object RoomName { get; set; }
 
         [Description("计容建筑面积")]
-        public string JiRongBuildingArea { get; set; }
+        public object JrArea { get; set; }
 
         [Description("计容系数")]
-        public string JiRongFactor { get; set; }
-
-        [Description("地上/地下属性")]
-        public string EarthOrUnder { get; set; }
+        public object JrFactor { get; set; }
 
         [Description("是否装修")]
-        public string IsDecorate { get; set; }
+        public object IsDecorate { get; set; }
 
-        [Description("标准主业态")]
-        public string MainBusinessType { get; set; }
-
-        [Description("服务对象")]
-        public string ServerObject { get; set; }
-
-        [Description("店铺上下水条件")]
-        public string ShopSewerage { get; set; }
-
-        [Description("店铺餐饮条件(含排油烟)")]
-        public string ShopDining { get; set; }
-
-        [Description("经营属性")]
-        public string ManageProperty { get; set; }
-
-        [Description("经营类型")]
-        public string ManageType { get; set; }
+        [Description("上下水条件")]
+        public object WaterCondition { get; set; }
     }
 }

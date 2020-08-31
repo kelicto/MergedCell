@@ -6,16 +6,16 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{1C349077-68AB-48BA-A448-F0E7A35C990E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>KeLi.ExcelMerge.App</RootNamespace>
-    <AssemblyName>KeLi.ExcelMerge.App</AssemblyName>
+    <RootNamespace>KeLi.MergedCell.App</RootNamespace>
+    <AssemblyName>KeLi.MergedCell.App</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -28,7 +28,7 @@
     </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -67,6 +67,15 @@
     <Compile Include="Entities\SpanInfo.cs" />
     <Compile Include="Entities\BusinessCategory.cs" />
     <Compile Include="Entities\ColumnInfo.cs" />
+    <Compile Include="MergedCellFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MergedCellFrm.Designer.cs">
+      <DependentUpon>MergedCellFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MergedDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -74,31 +83,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="DataGridViewExtension.cs" />
-    <Compile Include="MergeDataGridView.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="MergeDataGridView.designer.cs">
-      <DependentUpon>MergeDataGridView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Entities\AreaKpi.cs" />
-    <Compile Include="MergeCellFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MergeCellFrm.Designer.cs">
-      <DependentUpon>MergeCellFrm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Entities\BusinessEntity.cs" />
-    <EmbeddedResource Include="MergeDataGridView.resx">
-      <DependentUpon>MergeDataGridView.cs</DependentUpon>
+    <EmbeddedResource Include="MergedCellFrm.resx">
+      <DependentUpon>MergedCellFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MergeCellFrm.resx">
-      <DependentUpon>MergeCellFrm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -56,7 +56,7 @@ using KeLi.Power.Drive.Excel;
 
 using OfficeOpenXml;
 
-namespace KeLi.ExcelMerge.App
+namespace KeLi.MergedCell.App
 {
     public static class DataGridViewExtension
     {
@@ -97,14 +97,14 @@ namespace KeLi.ExcelMerge.App
             dgv.SetDgvStyle();
         }
 
-        public static void ToMergeDgv<TTitle, TModel>(this MergeDataGridView mdgv, ExcelParameter param)
+        public static void ToMergeDgv<TTitle, TModel>(this MergedDataGridView mdgv, ExcelParameter param)
         {
             var data = param.AsList<TModel>();
 
             mdgv.ToMergeDgv<TTitle, TModel>(data);
         }
 
-        public static void ToMergeDgv<TTitle, TModel>(this MergeDataGridView mdgv, List<TModel> objs)
+        public static void ToMergeDgv<TTitle, TModel>(this MergedDataGridView mdgv, List<TModel> objs)
         {
             if (mdgv.MergeColumnNames == null)
                 mdgv.MergeColumnNames = new List<string>();
@@ -184,7 +184,7 @@ namespace KeLi.ExcelMerge.App
             return excel;
         }
 
-        public static ExcelPackage ToExcel<TTitle>(this MergeDataGridView mdgv, ExcelParameter param, bool createHeader = true)
+        public static ExcelPackage ToExcel<TTitle>(this MergedDataGridView mdgv, ExcelParameter param, bool createHeader = true)
         {
             if (!File.Exists(param.FilePath))
                 File.Copy(param.TemplatePath, param.FilePath);
@@ -328,7 +328,7 @@ namespace KeLi.ExcelMerge.App
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
-        public static void SetMdgvStyle(this MergeDataGridView mdgv)
+        public static void SetMdgvStyle(this MergedDataGridView mdgv)
         {
             mdgv.SetDgvStyle();
 
@@ -337,7 +337,7 @@ namespace KeLi.ExcelMerge.App
             mdgv.DefaultCellStyle.SelectionForeColor = mdgv.DefaultCellStyle.ForeColor;
         }
 
-        public static void MergeHeaders<T>(this MergeDataGridView mdgv)
+        public static void MergeHeaders<T>(this MergedDataGridView mdgv)
         {
             var lastSum = 0;
 

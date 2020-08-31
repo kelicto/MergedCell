@@ -46,25 +46,26 @@
         /_==__==========__==_ooo__ooo=_/'   /___________,"
 */
 
-using System.Collections.Generic;
-using System.IO;
-using System.Windows.Forms;
-
-using KeLi.ExcelMerge.App.Entities;
-using KeLi.Power.Tool.Serializations;
-
-namespace KeLi.ExcelMerge.App
+namespace KeLi.MergedCell.App.Entities
 {
-    public partial class MergeCellFrm : Form
+    public class ColumnInfo
     {
-        public MergeCellFrm()
+        public ColumnInfo(string[] baseClumns, string[] baseItems, string[] customColumns, string[][] customItems)
         {
-            InitializeComponent();
-
-            var businessfile = new FileInfo(@"Resources\BusinessData.xml");
-            var data = XmlUtil.Deserialize<List<BusinessEntity>>(businessfile);
-
-            mdgvTest.ToMergeDgv<BusinessCategory, BusinessEntity>(data);
+            BaseClumns = baseClumns;
+            BaseItems = baseItems;
+            CustomColumns = customColumns;
+            CustomItems = customItems;
         }
+
+        public string[] BaseClumns { get; set; }
+
+        public string[] BaseItems { get; set; }
+
+        public string[] CustomColumns { get; set; }
+
+        public string[][] CustomItems { get; set; }
+
+        public int SkipIndex { get; set; }
     }
 }

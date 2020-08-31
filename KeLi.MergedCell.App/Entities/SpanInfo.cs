@@ -46,7 +46,7 @@
         /_==__==========__==_ooo__ooo=_/'   /___________,"
 */
 
-namespace KeLi.ExcelMerge.App.Entities
+namespace KeLi.MergedCell.App.Entities
 {
     public struct SpanInfo
     {

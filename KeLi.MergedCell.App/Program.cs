@@ -46,16 +46,20 @@
         /_==__==========__==_ooo__ooo=_/'   /___________,"
 */
 
-namespace KeLi.ExcelMerge.App.Entities
+using System;
+using System.Windows.Forms;
+
+namespace KeLi.MergedCell.App
 {
-    public class CellInfo
+    public static class Program
     {
-        public int RowIndex { get; set; }
-
-        public int ColumnIndex { get; set; }
-
-        public int UpRowNum { get; set; }
-
-        public int DownRowNum { get; set; }
+        [STAThread]
+        public static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
+            Application.Run(new MergedCellFrm());
+        }
     }
 }
