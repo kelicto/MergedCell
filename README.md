@@ -1,2 +1,2 @@
-# ExcelMerge
-This is an excel merge and datagridview merge program.
+# MergedCell
+This is an merged cell demo.
