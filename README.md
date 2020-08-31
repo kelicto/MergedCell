@@ -1,2 +1,2 @@
 # MergedCell
-This is an merged cell demo.
+This is a merged cell demo.
