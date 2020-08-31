@@ -59,7 +59,7 @@ namespace KeLi.ExcelMerge.App
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
-            Application.Run(new MergeCellFrm());
+            Application.Run(new CellMergingFrm());
         }
     }
 }

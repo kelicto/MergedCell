@@ -55,9 +55,9 @@ using KeLi.Power.Tool.Serializations;
 
 namespace KeLi.ExcelMerge.App
 {
-    public partial class MergeCellFrm : Form
+    public partial class CellMergingFrm : Form
     {
-        public MergeCellFrm()
+        public CellMergingFrm()
         {
             InitializeComponent();
 

@@ -1,6 +1,6 @@
 ﻿namespace KeLi.ExcelMerge.App
 {
-    partial class MergeCellFrm
+    partial class CellMergingFrm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MergeCellFrm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CellMergingFrm));
             this.mdgvTest = new MergeDataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.mdgvTest)).BeginInit();
             this.SuspendLayout();
